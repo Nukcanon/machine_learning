@@ -95,68 +95,75 @@
 				<h3>[ 배선 연결표 ]</h3>
 				<div style="display:inline-block; padding: 0px 6px 10px; width: 95%;">
 					<p style="font-weight: bold; margin-top: 15px;">1. ESP32 연결</p>
-					<table cellspacing="0" style="border-collapse:collapse; width:100%; min-width:600px; margin:auto; font-size: 0.95rem;">
-						<thead>
-							<tr>
-								<td style="background-color:#dcdcdc; border:solid #999 1px; padding: 10px; width:20%; font-weight:bold;">기준 (ESP32)</td>
-								<td style="background-color:#dcdcdc; border:solid #999 1px; padding: 10px; width:30%; font-weight:bold;">연결 대상</td>
-								<td style="background-color:#dcdcdc; border:solid #999 1px; padding: 10px; width:20%; font-weight:bold;">대상 핀</td>
-								<td style="background-color:#dcdcdc; border:solid #999 1px; padding: 10px; width:30%; font-weight:bold;">설명</td>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td style="border:solid #ccc 1px; padding: 8px;">GPIO 13</td>
-								<td style="border:solid #ccc 1px; padding: 8px;">ESP32-CAM</td>
-								<td style="border:solid #ccc 1px; padding: 8px;">IO 13</td>
-								<td style="border:solid #ccc 1px; padding: 8px;">시리얼 통신 (RX/TX)</td>
-							</tr>
-							<tr>
-								<td style="border:solid #ccc 1px; padding: 8px;">GPIO 14</td>
-								<td style="border:solid #ccc 1px; padding: 8px;">ESP32-CAM</td>
-								<td style="border:solid #ccc 1px; padding: 8px;">IO 14</td>
-								<td style="border:solid #ccc 1px; padding: 8px;">시리얼 통신 (RX/TX)</td>
-							</tr>
-							<tr>
-								<td style="border:solid #ccc 1px; padding: 8px;">GPIO 16</td>
-								<td style="border:solid #ccc 1px; padding: 8px;">L298N</td>
-								<td style="border:solid #ccc 1px; padding: 8px;">IN 1</td>
-								<td style="border:solid #ccc 1px; padding: 8px;">오른쪽 바퀴 (+)</td>
-							</tr>
-							<tr>
-								<td style="border:solid #ccc 1px; padding: 8px;">GPIO 17</td>
-								<td style="border:solid #ccc 1px; padding: 8px;">L298N</td>
-								<td style="border:solid #ccc 1px; padding: 8px;">IN 2</td>
-								<td style="border:solid #ccc 1px; padding: 8px;">오른쪽 바퀴 (-)</td>
-							</tr>
-							<tr>
-								<td style="border:solid #ccc 1px; padding: 8px;">GPIO 21</td>
-								<td style="border:solid #ccc 1px; padding: 8px;">L298N</td>
-								<td style="border:solid #ccc 1px; padding: 8px;">IN 3</td>
-								<td style="border:solid #ccc 1px; padding: 8px;">왼쪽 바퀴 (+)</td>
-							</tr>
-							<tr>
-								<td style="border:solid #ccc 1px; padding: 8px;">GPIO 22</td>
-								<td style="border:solid #ccc 1px; padding: 8px;">L298N</td>
-								<td style="border:solid #ccc 1px; padding: 8px;">IN 4</td>
-								<td style="border:solid #ccc 1px; padding: 8px;">왼쪽 바퀴 (-)</td>
-							</tr>
-							<tr>
-								<td style="border:solid #ccc 1px; padding: 8px;">VIN (5V)</td>
-								<td style="border:solid #ccc 1px; padding: 8px;">L298N</td>
-								<td style="border:solid #ccc 1px; padding: 8px;">+5V (Out)</td>
-								<td style="border:solid #ccc 1px; padding: 8px;">L298N → ESP32 전원 공급</td>
-							</tr>
-							<tr>
-								<td style="border:solid #ccc 1px; padding: 8px;">GND</td>
-								<td style="border:solid #ccc 1px; padding: 8px;">공통 GND</td>
-								<td style="border:solid #ccc 1px; padding: 8px;">GND</td>
-								<td style="border:solid #ccc 1px; padding: 8px;">모든 부품 공통 접지</td>
-							</tr>
-						</tbody>
-					</table>
-					<p style="font-weight: bold; margin-top: 20px;">2. L298N 및 배터리 연결</p>
-                        <table cellspacing="0" style="border-collapse:collapse; width:100%; min-width:600px; margin:auto; font-size: 0.95rem;">
+                        <table class="wiring-table">
+                            <thead>
+                                <tr>
+                                    <th width="20%">ESP32 핀</th>
+                                    <th width="25%">연결 대상</th>
+                                    <th width="20%">대상의 핀</th>
+                                    <th>역할 및 설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>GPIO 13</td>
+                                    <td>ESP32-CAM</td>
+                                    <td>GPIO 13</td>
+                                    <td>시리얼 통신 송수신</td>
+                                </tr>
+                                <tr>
+                                    <td>GPIO 14</td>
+                                    <td>ESP32-CAM</td>
+                                    <td>GPIO 14</td>
+                                    <td>시리얼 통신 송수신</td>
+                                </tr>
+                                <tr>
+                                    <td>GPIO 16</td>
+                                    <td>L298N</td>
+                                    <td>IN 1</td>
+                                    <td>오른쪽 바퀴 전진 (+) 신호</td>
+                                </tr>
+                                <tr>
+                                    <td>GPIO 17</td>
+                                    <td>L298N</td>
+                                    <td>IN 2</td>
+                                    <td>오른쪽 바퀴 후진 (-) 신호</td>
+                                </tr>
+                                <tr>
+                                    <td>GPIO 21</td>
+                                    <td>L298N</td>
+                                    <td>IN 3</td>
+                                    <td>왼쪽 바퀴 전진 (+) 신호</td>
+                                </tr>
+                                <tr>
+                                    <td>GPIO 22</td>
+                                    <td>L298N</td>
+                                    <td>IN 4</td>
+                                    <td>왼쪽 바퀴 후진 (-) 신호</td>
+                                </tr>
+                                <tr>
+                                    <td>+5V (VIN)</td>
+                                    <td>L298N</td>
+                                    <td>+5V</td>
+                                    <td>L298N에서 ESP32 전원 공급</td>
+                                </tr>
+                                <tr>
+                                    <td>+5V (VIN)</td>
+                                    <td>ESP32-CAM</td>
+                                    <td>5V</td>
+                                    <td>ESP32-CAM으로 전원 공급</td>
+                                </tr>
+                                <tr>
+                                    <td>GND</td>
+                                    <td>L298N & CAM</td>
+                                    <td>GND</td>
+                                    <td>모든 장치의 기준 전압</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p style="font-weight: bold; margin-top: 20px;">2. L298N 및 배터리 연결</p>
+                        <table class="wiring-table">
                             <thead>
                                 <tr>
                                     <th width="25%">L298N 단자</th>
