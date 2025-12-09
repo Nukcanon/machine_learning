@@ -1,0 +1,131 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" style="display:flex;height:100%;flex-direction:column;">
+<head>
+	<meta charset="utf-8" />
+	<title>Nukcanon ESP32 자율주행 RC카</title>
+	<base href='./' />
+	<link rel="stylesheet" href="https://nukcanon.github.io/nukcanon/css/style.css" />
+</head>
+<body style="padding-bottom:3px;align-items:center">
+<div class="topbanner">
+		<div style="align-self:stretch;width:960px;display:flex; flex-direction: row;">
+			<div style="flex:99999">
+				<label>Nukcanon</label>
+			</div>
+			<div>
+				<a target="_self" href="https://nukcanon.github.io/nukcanon/index.html">Home</a>
+			</div>
+		</div>
+	</div>
+	<div style="margin: auto; padding: 0px 6px 36px; max-width: 960px;">
+		<div class='navfoldercontainer'>
+			<div class='navfolder'>
+			<h2>ESP32 & ESP32-CAM<br>
+			AI 자율주행 RC카 프로젝트</h2>
+			</div>
+			
+			<div style="line-height:2.0em; margin-bottom: 20px;">
+			<h3>[ 실행 순서 및 방법 ]</h3>
+			<ol>
+  				<li><strong>펌웨어 업로드:</strong> ESP32 보드와 ESP32-CAM에 각각 맞는 펌웨어(Arduino Sketch 등)를 업로드합니다.</li>
+ 				<li><strong>회로 연결:</strong> 아래의 회로도와 배선표를 참고하여 모터 드라이버(L298N), 배터리, ESP32, ESP32-CAM을 연결합니다.</li>
+  				<li><strong>전원 공급:</strong> 18650 배터리를 연결하여 RC카의 전원을 켭니다.</li>
+				<li><strong>PC 프로그램 실행:</strong> 컴퓨터에서 Python 제어 프로그램(데이터 수집 또는 자율주행 코드)을 실행하여 RC카와 연결합니다.</li>
+			</ol>
+			</div>
+
+			<div style="text-align: center; margin-bottom: 30px;">
+				<h3>[ 회로도 ]</h3>
+				<img style="width: 100%; max-width: 800px; border: 1px solid #ccc;" src="ESP32_autonomous_driving_회로도.jpg" alt="자율주행 RC카 회로도">
+			</div>
+
+			<div style="text-align: center;">
+				<h3>[ 상세 배선표 ]</h3>
+				<div style="display:inline-block; padding: 0px 6px 10px;">
+					<table cellspacing="0" style="border-collapse:collapse; border-color:initial; border-style:none; border-width:initial; width:100%; min-width:600px; margin:auto;">
+						<tbody>
+							<tr>
+								<td style="background-color:#dcdcdc; border:solid #5d5d5d 1px; padding: 8px; width:20%;">
+									<p style="text-align:center"><strong>기준 (ESP32)</strong></p>
+								</td>
+								<td style="background-color:#dcdcdc; border:solid #5d5d5d 1px; padding: 8px; width:30%;">
+									<p style="text-align:center"><strong>연결 대상</strong></p>
+								</td>
+								<td style="background-color:#dcdcdc; border:solid #5d5d5d 1px; padding: 8px; width:20%;">
+									<p style="text-align:center"><strong>대상 핀</strong></p>
+								</td>
+								<td style="background-color:#dcdcdc; border:solid #5d5d5d 1px; padding: 8px; width:30%;">
+									<p style="text-align:center"><strong>설명</strong></p>
+								</td>
+							</tr>
+							<tr>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">GPIO 13</td>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">ESP32-CAM</td>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">IO 13</td>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">시리얼 통신 (RX/TX)</td>
+							</tr>
+							<tr>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">GPIO 14</td>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">ESP32-CAM</td>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">IO 14</td>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">시리얼 통신 (RX/TX)</td>
+							</tr>
+							<tr>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">GPIO 16</td>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">L298N</td>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">IN 1</td>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">오른쪽 바퀴 전진 (+)</td>
+							</tr>
+							<tr>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">GPIO 17</td>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">L298N</td>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">IN 2</td>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">오른쪽 바퀴 후진 (-)</td>
+							</tr>
+							<tr>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">GPIO 21</td>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">L298N</td>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">IN 3</td>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">왼쪽 바퀴 전진 (+)</td>
+							</tr>
+							<tr>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">GPIO 22</td>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">L298N</td>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">IN 4</td>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">왼쪽 바퀴 후진 (-)</td>
+							</tr>
+							<tr>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">VIN (5V)</td>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">L298N</td>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">+5V (Out)</td>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">L298N에서 ESP32로 전원 공급</td>
+							</tr>
+							<tr>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">GND</td>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">공통 GND</td>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">GND</td>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">배터리/L298N/CAM 공통 접지</td>
+							</tr>
+							<tr>
+								<td style="border:solid #5d5d5d 1px; padding: 5px; background-color: #f9f9f9;" colspan="4"><strong>L298N & 기타 연결</strong></td>
+							</tr>
+							<tr>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">-</td>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">L298N (12V In)</td>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">배터리 (+)</td>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">모터 구동용 주 전원</td>
+							</tr>
+							<tr>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">-</td>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">ESP32-CAM (5V)</td>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">L298N (+5V)</td>
+								<td style="border:solid #5d5d5d 1px; padding: 5px;">카메라 보드 전원 공급</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
