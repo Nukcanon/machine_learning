@@ -94,6 +94,7 @@
 			<div style="text-align: center; margin-bottom: 20px;">
 				<h3>[ 배선 연결표 ]</h3>
 				<div style="display:inline-block; padding: 0px 6px 10px; width: 95%;">
+					<p style="font-weight: bold; margin-top: 15px;">1. ESP32 연결</p>
 					<table cellspacing="0" style="border-collapse:collapse; width:100%; min-width:600px; margin:auto; font-size: 0.95rem;">
 						<thead>
 							<tr>
@@ -154,6 +155,43 @@
 							</tr>
 						</tbody>
 					</table>
+					<p style="font-weight: bold; margin-top: 20px;">2. L298N 및 배터리 연결</p>
+                        <table class="wiring-table">
+                            <thead>
+                                <tr>
+                                    <th width="25%">L298N 단자</th>
+                                    <th width="30%">연결 대상</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>12V (입력)</td>
+                                    <td>배터리 (+)</td>
+                                    <td>모터 구동용 주 전원 (7V 이상 권장)</td>
+                                </tr>
+                                <tr>
+                                    <td>GND (공통)</td>
+                                    <td>배터리 (-)</td>
+                                    <td>배터리 마이너스 연결 (ESP32 GND와도 연결됨)</td>
+                                </tr>
+                                <tr>
+                                    <td>+5V (출력)</td>
+                                    <td>ESP32 +5V</td>
+                                    <td>ESP32와 ESP32-CAM을 켜주는 전원 출력</td>
+                                </tr>
+                                <tr>
+                                    <td>OUT 1, 2</td>
+                                    <td>오른쪽 모터들</td>
+                                    <td>오른쪽 앞바퀴 + 뒷바퀴 선을 꼬아서 연결</td>
+                                </tr>
+                                <tr>
+                                    <td>OUT 3, 4</td>
+                                    <td>왼쪽 모터들</td>
+                                    <td>왼쪽 앞바퀴 + 뒷바퀴 선을 꼬아서 연결</td>
+                                </tr>
+                            </tbody>
+                        </table>
 				</div>
 			</div>
 		</div>
