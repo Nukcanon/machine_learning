@@ -32,50 +32,50 @@
 			</div>
 		</div>
 	</div>
-
-    <div class='navfoldercontainer'>
-    <div class='navfolder'>
-        <h2>ESP32 AI 자율주행 RC카</h2>
-    </div>
-    
-    <div style="line-height:1.6em; padding: 20px;">
-        <div style="background-color: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 20px; margin-bottom: 30px;">
-            <h3 style="margin-top: 0; color: #333; border-bottom: 2px solid #ddd; padding-bottom: 10px;">실습 필요 사항</h3>
-            
-            <ol style="margin-left: -15px; padding-left: 20px;">
-                <li style="margin-bottom: 15px;">
-                    <strong>하드웨어 펌웨어 업로드</strong>
-                    <div class="step-desc">아래 링크의 가이드를 참고하여 ESP32에는 <b>[시리얼 제어]</b>, ESP32-CAM에는 <b>[텔넷 스트리밍]</b> 코드를 각각 업로드하세요.</div>
-                    <div style="text-align: center; margin-top: 10px;">
-                        <a href="https://nukcanon.github.io/ESP32-CAM_remote_control/ESP32-CAM_remote_control.html" 
-                           style="display: inline-block; padding: 8px 20px; background-color: #555; color: #fff; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.9em;">
-                           🔗 원격 조종 자동차 가이드 링크
-                        </a>
-                    </div>
-                </li>
-                <li>
-				    <strong>Anaconda 환경 설정</strong>
-				    <div class="step-desc">Anaconda Prompt를 실행하고 아래 명령어를 이용하여, 가상환경 설정과 필요한 라이브러리를 설치합니다.</div>
-				    
-				    <div style="background: #333; color: #f1f1f1; padding: 15px; border-radius: 6px; font-family: 'Consolas', monospace; font-size: 0.85em; margin-top: 10px; overflow-x: auto;">
-				        <span style="color: #999;"># 1. 가상환경 생성 및 활성화</span><br>
-				        conda create -n <span style="color: #ffcc00; font-weight: bold;">drive_env</span> python=3.8.20 -y<br>
-				        conda activate <span style="color: #ffcc00; font-weight: bold;">drive_env</span><br><br>
-				        
-				        <span style="color: #999;"># 2. 주피터 노트북 커널 설치</span><br>
-				        pip install ipykernel<br>
-				        python -m ipykernel install --user --name=<span style="color: #ffcc00; font-weight: bold;">drive_env</span><br><br>
-				        
-				        <span style="color: #999;"># 3. 인공지능 라이브러리 설치 (버전 필수 준수)</span><br>
-				        pip install tensorflow==2.10.0 protobuf==3.20.3 opencv-python PyQt5
-				    </div>
-				
-				    <p style="font-size: 0.85em; color: #666; margin-top: 8px; line-height: 1.4em;">
-				        ※ <b style="color: #333;">drive_env</b>는 가상환경의 이름입니다. 원하시는 다른 이름으로 변경하여 사용할 수 있으며, 이름을 바꿀 경우 위 명령어에 포함된 모든 <b style="color: #333;">drive_env</b>를 동일하게 수정해 주세요.
-				    </p>
-				</li>
-            </ol>
-        </div>
+	<div style="margin: auto; padding: 0px 6px 0px; max-width: 960px; width: 100%;">
+	    <div class='navfoldercontainer'>
+	    <div class='navfolder'>
+	        <h2>ESP32 AI 자율주행 RC카</h2>
+	    </div>
+	    
+	    <div style="line-height:1.6em; padding: 20px;">
+	        <div style="background-color: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 20px; margin-bottom: 30px;">
+	            <h3 style="margin-top: 0; color: #333; border-bottom: 2px solid #ddd; padding-bottom: 10px;">실습 필요 사항</h3>
+	            
+	            <ol style="margin-left: -15px; padding-left: 20px;">
+	                <li style="margin-bottom: 15px;">
+	                    <strong>하드웨어 펌웨어 업로드</strong>
+	                    <div class="step-desc">아래 링크의 가이드를 참고하여 ESP32에는 <b>[시리얼 제어]</b>, ESP32-CAM에는 <b>[텔넷 스트리밍]</b> 코드를 각각 업로드하세요.</div>
+	                    <div style="text-align: center; margin-top: 10px;">
+	                        <a href="https://nukcanon.github.io/ESP32-CAM_remote_control/ESP32-CAM_remote_control.html" 
+	                           style="display: inline-block; padding: 8px 20px; background-color: #555; color: #fff; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.9em;">
+	                           🔗 원격 조종 자동차 가이드 링크
+	                        </a>
+	                    </div>
+	                </li>
+	                <li>
+					    <strong>Anaconda 환경 설정</strong>
+					    <div class="step-desc">Anaconda Prompt를 실행하고 아래 명령어를 이용하여, 가상환경 설정과 필요한 라이브러리를 설치합니다.</div>
+					    
+					    <div style="background: #333; color: #f1f1f1; padding: 15px; border-radius: 6px; font-family: 'Consolas', monospace; font-size: 0.85em; margin-top: 10px; overflow-x: auto;">
+					        <span style="color: #999;"># 1. 가상환경 생성 및 활성화</span><br>
+					        conda create -n <span style="color: #ffcc00; font-weight: bold;">drive_env</span> python=3.8.20 -y<br>
+					        conda activate <span style="color: #ffcc00; font-weight: bold;">drive_env</span><br><br>
+					        
+					        <span style="color: #999;"># 2. 주피터 노트북 커널 설치</span><br>
+					        pip install ipykernel<br>
+					        python -m ipykernel install --user --name=<span style="color: #ffcc00; font-weight: bold;">drive_env</span><br><br>
+					        
+					        <span style="color: #999;"># 3. 인공지능 라이브러리 설치 (버전 필수 준수)</span><br>
+					        pip install tensorflow==2.10.0 protobuf==3.20.3 opencv-python PyQt5
+					    </div>
+					
+					    <p style="font-size: 0.85em; color: #666; margin-top: 8px; line-height: 1.4em;">
+					        ※ <b style="color: #333;">drive_env</b>는 가상환경의 이름입니다. 원하시는 다른 이름으로 변경하여 사용할 수 있으며, 이름을 바꿀 경우 위 명령어에 포함된 모든 <b style="color: #333;">drive_env</b>를 동일하게 수정해 주세요.
+					    </p>
+					</li>
+	            </ol>
+	        </div>
 
         <p>위 준비가 끝났다면 아래 순서대로 <code>주피터 노트북</code> 파일을 다운로드하여 실습을 진행합니다.</p>
         <hr>
