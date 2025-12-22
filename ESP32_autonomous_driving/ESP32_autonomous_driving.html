@@ -34,6 +34,33 @@
 	</div>
 
     <div style="margin: auto; padding: 0px 6px 36px; max-width: 960px;">
+        <div class='navfoldercontainer' style="margin-bottom: 20px;">
+            <div class='navfolder'>
+                <h2>소프트웨어 환경 설정 (Anaconda)</h2>
+            </div>
+            <div style="line-height:1.6em; padding: 20px; background-color: #f9f9f9;">
+                <p>실습을 시작하기 전, <b>Anaconda Prompt</b>를 관리자 권한으로 실행하고 아래 명령어를 순서대로 입력하여 가상환경을 구축하세요.</p>
+                
+                <div style="background: #2d2d2d; color: #ccc; padding: 15px; border-radius: 5px; font-family: 'Consolas', monospace; font-size: 0.9em;">
+                    <p style="color: #888; margin-bottom: 5px;"># 1. 가상환경 생성 (파이썬 3.8.20 버전)</p>
+                    <code style="color: #fff;">conda create -n drive_env python=3.8.20</code><br><br>
+
+                    <p style="color: #888; margin-bottom: 5px;"># 2. 가상환경 활성화</p>
+                    <code style="color: #fff;">conda activate drive_env</code><br><br>
+
+                    <p style="color: #888; margin-bottom: 5px;"># 3. 주피터 노트북 커널 연결</p>
+                    <code style="color: #fff;">pip install ipykernel</code><br>
+                    <code style="color: #fff;">python -m ipykernel install --user --name=drive_env</code><br><br>
+
+                    <p style="color: #888; margin-bottom: 5px;"># 4. 필수 라이브러리 설치 (버전 준수 필수)</p>
+                    <code style="color: #fff;">pip install tensorflow==2.10.0 protobuf==3.20.3 opencv-python PyQt5</code>
+                </div>
+                <p style="font-size: 0.85em; color: #d9534f; margin-top: 10px;">
+                    ※ <b>주의:</b> 텐서플로우와 프로토버프는 호환성을 위해 위 버전을 반드시 지켜주세요.
+                </p>
+            </div>
+        </div>
+		
 		<div class='navfoldercontainer'>
 			<div class='navfolder'>
 			<h2>ESP32 AI 자율주행 RC카</h2>
@@ -41,9 +68,9 @@
 			
 			<div style="line-height:1.5em; padding: 20px;">
                 <p>아래 순서대로 실습을 진행합니다. 링크를 클릭하여 <code>주피터 노트북</code> 파일을 다운로드하세요.</p>
-				<p>아래 링크의 원격 조종 자동차의 내용에서 2. 스마트폰/웹 브라우저 무선 조종에서 [ESP32] 시리얼 제어 코드를 ESP32에 업로드하고, 3. 컴퓨터(Python) 연결 및 데이터 수집에서 [ESP32-CAM] 텔넷 스트리밍 코드를 ESP32-CAM에 업로드한 상태에서 시작합니다.</p>
+				<p>아래 링크의 원격 조종 자동차의 내용에서 2.스마트폰/웹 브라우저 무선 조종 -> [ESP32] 시리얼 제어 코드를 ESP32에 업로드, 3. 컴퓨터(Python) 연결 및 데이터 수집 -> [ESP32-CAM] 텔넷 스트리밍 코드를 ESP32-CAM에 업로드한 상태에서 시작합니다.</p>
 				<p style="text-align: center; font-weight: bold;">
-			        <a href="https://nukcanon.github.io/ESP32-CAM_remote_control/ESP32-CAM_remote_control.html">원격 조종 자동차 링크</a>
+			        <b><a href="https://nukcanon.github.io/ESP32-CAM_remote_control/ESP32-CAM_remote_control.html">원격 조종 자동차 링크</a></b>
 			    </p>
                 <hr>
                 <ol class="step-list">
