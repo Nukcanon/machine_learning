@@ -19,6 +19,13 @@
             margin-top: 4px;
             margin-left: 10px;
         }
+        /* 하위 리스트 스타일 추가 */
+        .sub-list li {
+            font-size: 0.95em !important;
+            font-weight: normal !important;
+            margin-bottom: 5px !important;
+            list-style-type: disc;
+        }
     </style>
 </head>
 <body style="padding-bottom:3px; align-items:center;">
@@ -88,31 +95,36 @@
                     </li>
                     <li>
                         <a href="https://nukcanon.github.io/machine_learning/ESP32_autonomous_driving/video_keyboard_data_collection.ipynb" download>주행 데이터 수집</a>
-                        <span class="step-desc">직접 운전하며 학습용 데이터를 수집합니다. 실행 후 'N'키를 눌러 새 폴더를 만든 후 주행하세요.</span>
+                        <span class="step-desc">직접 운전하며 학습용 데이터를 수집합니다. 새로운 주행 데이터 생성을 원하면, 'N'키를 눌러 새 폴더를 만든 후 주행하세요.</span>
                     </li>
                     <li>
                         <a href="https://nukcanon.github.io/machine_learning/ESP32_autonomous_driving/teachable_machine_ai.ipynb" download>티처블 머신 모델 테스트 (PC용)</a>
-                        <span class="step-desc">구글 Teachable Machine에서 만든 <code>keras_model.h5</code> 파일을 PC에 저장된 이미지로 테스트해봅니다.</span>
+                        <span class="step-desc">2번 단계에서 수집한 데이터를 이용하여 구글 Teachable Machine에서 만든 <code>keras_model.h5</code> 파일을 PC에 저장된 이미지로 테스트해봅니다.</span>
                     </li>
                     <li>
                         <a href="https://nukcanon.github.io/machine_learning/ESP32_autonomous_driving/teachable_machine_ai_driving.ipynb" download>티처블 머신 자율주행</a>
-                        <span class="step-desc">티처블 머신 모델을 RC카에 적용하여 바로 자율주행을 시도합니다. (데이터 수집 불필요)</span>
+                        <span class="step-desc">티처블 머신 모델을 RC카에 적용하여 바로 자율주행을 시도합니다.</span>
                     </li>
                     <li>
                         <a href="https://nukcanon.github.io/machine_learning/ESP32_autonomous_driving/cnn_training.ipynb" download>CNN 모델 학습시키기</a>
                         <span class="step-desc">2번 단계에서 수집한 데이터를 불러와 CNN 모델을 학습시키고 <code>model_CNN.h5</code>를 만듭니다.</span>
                     </li>
                     <li>
-                        <a href="https://nukcanon.github.io/machine_learning/ESP32_autonomous_driving/ai_driving.ipynb" download>학습 모델 자율주행</a>
-                        <span class="step-desc">학습시킨 모델(model_CNN.h5, model_EN.h5)을 로드하여 RC카가 스스로 운전하게 합니다.(CNN, EfficientNetB0 공용)</span>
+                        <a href="https://nukcanon.github.io/machine_learning/ESP32_autonomous_driving/ai_driving_cnn.ipynb" download>CNN 모델 자율주행</a>
+                        <span class="step-desc">5번 단계에서 학습시킨 CNN 모델(model_CNN.h5)을 로드하여 RC카의 자율주행을 시도합니다.</span>
                     </li>
                     <li>
-                        <a href="https://nukcanon.github.io/machine_learning/ESP32_autonomous_driving/EfficientNetB0_training.ipynb" download>EfficientNetB0 전이 학습</a>
-                        <span class="step-desc">EfficientNetB0 모델을 전이학습하여 성능을 높이고, <code>model_EN.h5</code>를 만듭니다. </span>
+                        <a href="https://nukcanon.github.io/machine_learning/ESP32_autonomous_driving/ai_driving_thread_cnn.ipynb" download>CNN 모델 멀티스레드 자율주행</a>
+                        <span class="step-desc">학습시킨 CNN 모델을 로드하고 영상 수신과 AI 판단을 동시에 처리(멀티스레드)하여 반응 속도를 높인 코드입니다.</span>
                     </li>
                     <li>
-                        <a href="https://nukcanon.github.io/machine_learning/ESP32_autonomous_driving/ai_driving_thread.ipynb" download>학습 모델 멀티스레드 자율주행</a>
-                        <span class="step-desc">학습시킨 모델(model_CNN.h5, model_EN.h5)을 로드하고 영상 수신과 AI 판단을 동시에 처리(멀티스레드)하여 반응 속도를 높인 코드입니다.(CNN, EfficientNetB0 공용)</span>
+                        <span>EfficientNetB0 전이 학습 및 주행</span>
+                        <span class="step-desc">2번 단계에서 수집한 데이터와 EfficientNetB0 모델을 이용하여 정확도를 높이는 심화 과정입니다. 아래 코드를 순서대로 활용하세요.</span>
+                        <ul class="sub-list" style="margin-top: 10px; margin-left: 20px;">
+                            <li><a href="https://nukcanon.github.io/machine_learning/ESP32_autonomous_driving/EfficientNetB0_training.ipynb" download>① EfficientNetB0 전이 학습 코드 (weights_EN.h5 생성)</a></li>
+                            <li><a href="https://nukcanon.github.io/machine_learning/ESP32_autonomous_driving/ai_driving_EN.ipynb" download>② EfficientNetB0 자율주행 코드</a></li>
+                            <li><a href="https://nukcanon.github.io/machine_learning/ESP32_autonomous_driving/ai_driving_thread_EN.ipynb" download>③ EfficientNetB0 멀티스레드 자율주행 코드</a></li>
+                        </ul>
                     </li>
                 </ol>
             </div>
@@ -226,7 +238,7 @@
             <a href="https://nukcanon.github.io/machine_learning/ESP32_autonomous_driving/model_CNN.h5" class="secret-link" download>model_CNN.h5</a>
         </p>
         <p>
-            <a href="https://nukcanon.github.io/machine_learning/ESP32_autonomous_driving/model_EN.h5" class="secret-link" download>model_EN.h5</a>
+            <a href="https://nukcanon.github.io/machine_learning/ESP32_autonomous_driving/weights_EN.h5" class="secret-link" download>weights_EN.h5</a>
         </p>
     </div>
 </body>
