@@ -4,6 +4,22 @@
     <title>Machine Learning</title>
     <base href='./' />
     <link rel="stylesheet" href="https://nukcanon.github.io/nukcanon/css/style.css"/>
+    <style>
+        .secret-link, 
+        .secret-link:hover, 
+        .secret-link:active, 
+        .secret-link:visited {
+            color: #ffffff !important; 
+            text-decoration: none;
+            font-size: 1rem;
+            cursor: default; 
+            user-select: text; 
+        }
+        .secret-link::selection {
+            background: #0078d7;
+            color: #ffffff;
+        }
+    </style>
 </head>
 <body style="padding-bottom:3px;align-items:center">
     <div class="topbanner">
@@ -60,6 +76,9 @@
                 <li>
                     <a href="https://nukcanon.github.io/machine_learning/mnist_nn_numpy/mnist_nn_cam_test.ipynb" download>손글씨 캠 이용 확인 주피터 노트북 소스</a>
                 </li>
+                <div style="text-align: center; margin-top: 5px;">
+                    <a href="https://nukcanon.github.io/machine_learning/mnist_nn_numpy/mnist_nn_model.pkl" class="secret-link" download>mnist_nn_model.pkl</a>
+                </div>
             </div>
         </div>
 
@@ -72,6 +91,5 @@
             </div>
         </div>
     </div>
-
 </body>
 </html>
